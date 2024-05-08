@@ -1,0 +1,19 @@
+name: Basic Action Template
+description: Get started with Basic actions
+branding:
+  icon: check-circle
+  color: yellow
+inputs:
+  argument1:
+    description: first argument
+    required: false
+    default: argument 1
+outputs:
+  argument1:
+    description: out puts first argument
+    value: first argument value
+runs:
+  using: composite
+  steps:
+    - name: actionsRun
+      run: echo "Hello, ${{ inputs.argument1 }}"
