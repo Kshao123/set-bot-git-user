@@ -21,6 +21,6 @@ runs:
         EMAIL: ${{ inputs.email }}
       shell: bash
       run: |
-        git config set user.name $NAME
-        git config set user.email $EMAIL
+        git config user.name $NAME
+        git config user.email $EMAIL
         
