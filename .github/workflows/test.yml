@@ -9,16 +9,38 @@ on:
 #  schedule:
 
 jobs:
-  runners:
-    runs-on: ubuntu-latest
-#    outputs:
-    steps:
-      - name: step1
-#        id: stepFirst
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 2
 
-      - run: echo "step1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: test default user and email
+        uses: ./
+        run: |
+          test "${git config user.name}" = "github-actions[bot]" 
+          test "${git config user.email}" = "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: test custom user and email
+        uses: ./
+        with:
+          name: "custom user"
+          email: "custom email"
+        run: |
+          test "${git config user.name}" = "custom user" 
+          test "${git config user.email}" = "custom email"
+
+  test-passing:
+    needs: [test]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - run: echo "test-passing"
+
 
 

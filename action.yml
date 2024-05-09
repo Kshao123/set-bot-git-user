@@ -1,19 +1,26 @@
-name: Basic Action Template
-description: Get started with Basic actions
+name: "Set Bot Git User"
+description: "set bot git user or custom user"
 branding:
-  icon: check-circle
-  color: yellow
+  icon: "user-plus"
+  color: "orange"
 inputs:
-  argument1:
-    description: first argument
+  name:
+    description: "git config user.name"
     required: false
-    default: argument 1
-outputs:
-  argument1:
-    description: out puts first argument
-    value: first argument value
+    default: github-actions[bot]
+  email:
+    description: "git config user.email"
+    required: false
+    default: 41898282+github-actions[bot]@users.noreply.github.com
 runs:
-  using: composite
+  using: "composite"
   steps:
-    - name: actionsRun
-      run: echo "Hello, ${{ inputs.argument1 }}"
+    - name: git config user
+      env:
+        NAME: ${{ inputs.name }}
+        EMAIL: ${{ inputs.email }}
+      shell: bash
+      run: |
+        git config set user.name $NAME
+        git config set user.email $EMAIL
+        

@@ -1,8 +1,16 @@
-# basic-actions-template
-basic actions template, easy create action
+# Set Bot Git User And Custom User
+[![Test](https://github.com/kshao123/set-bot-git-user/actions/workflows/test.yml/badge.svg)](https://github.com/kshao123/set-bot-git-user/actions/workflows/test.yml)
 
-[![Test](https://github.com/kshao123/basic-actions-template/actions/workflows/test.yml/badge.svg)](https://github.com/kshao123/basic-actions-template/actions/workflows/test.yml)
+# Usage
+## Default
+```yaml
+- uses: kshao123/set-bot-git-user@v1
+```
 
-# Create a Basic Action
-
-Click the `Use this template` to use
+## Specify
+```yaml
+- uses: kshao123/set-bot-git-user@v1
+    with:
+      name: "custom user"
+      email: "custom email"
+```
