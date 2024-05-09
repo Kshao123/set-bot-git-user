@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/Kshao123/set-bot-git-user/compare/v0.1.1...v0.1.2) (2024-05-09)
+
+
+### Bug Fixes
+
+* update code ([ff48658](https://github.com/Kshao123/set-bot-git-user/commit/ff486582ff09c799d9c154e4f34150a3f60fdfbf))
+
+
+
 ## [0.1.1](https://github.com/Kshao123/set-bot-git-user/compare/v0.1.0...v0.1.1) (2024-05-09)
 
 
