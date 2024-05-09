@@ -26,10 +26,10 @@ jobs:
           test "${git config user.email}" = "41898282+github-actions[bot]@users.noreply.github.com"
 
       - uses: ./
-      - name: test custom user and email
         with:
           name: "custom user"
           email: "custom email"
+      - name: test custom user and email
         run: |
           test "${git config user.name}" = "custom user" 
           test "${git config user.email}" = "custom email"
