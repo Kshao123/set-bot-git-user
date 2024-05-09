@@ -18,14 +18,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: ./
       - name: test default user and email
         run: |
           test "${git config user.name}" = "github-actions[bot]" 
           test "${git config user.email}" = "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - uses: ./
       - name: test custom user and email
-        uses: ./
         with:
           name: "custom user"
           email: "custom email"
