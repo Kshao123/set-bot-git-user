@@ -32,6 +32,7 @@ jobs:
           email: "custom email"
       - name: test custom user and email
         run: |
+          echo "custom user $(git config user.name)"
           test "$(git config user.name)" = "custom user" 
           test "$(git config user.email)" = "custom email"
           echo "test custom user and email passed $(git config user.name)"
