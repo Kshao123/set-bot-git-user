@@ -10,7 +10,7 @@
 ## Specify
 ```yaml
 - uses: kshao123/set-bot-git-user@v1
-    with:
-      name: "custom user"
-      email: "custom email"
+  with:
+    name: "custom user"
+    email: "custom email"
 ```
