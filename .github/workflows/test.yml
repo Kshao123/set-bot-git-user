@@ -22,8 +22,9 @@ jobs:
       - uses: ./
       - name: test default user and email
         run: |
-          test "${git config user.name}" = "github-actions[bot]" 
-          test "${git config user.email}" = "41898282+github-actions[bot]@users.noreply.github.com"
+          test "$(git config user.name)" = "github-actions[bot]" 
+          test "$(git config user.email)" = "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "test default user and email passed $(git config user.name)"
 
       - uses: ./
         with:
@@ -31,8 +32,9 @@ jobs:
           email: "custom email"
       - name: test custom user and email
         run: |
-          test "${git config user.name}" = "custom user" 
-          test "${git config user.email}" = "custom email"
+          test "$(git config user.name)" = "custom user" 
+          test "$(git config user.email)" = "custom email"
+          echo "test custom user and email passed $(git config user.name)"
 
   test-passing:
     needs: [test]
