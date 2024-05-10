@@ -2,7 +2,7 @@ name: "Set Bot Git User"
 description: "set bot git user or custom user"
 branding:
   icon: "user-plus"
-  color: "orange"
+  color: gray-dark
 inputs:
   name:
     description: "git config user.name"
